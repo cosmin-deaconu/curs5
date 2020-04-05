@@ -21,7 +21,7 @@ class Home extends React.Component{
         return (
             <div>
                 <Layout> 
-                    <div className="container-fluid">
+                    <div className="container-fluid container-min-max-width">
                         <div className="row">
                             {this.state.categories.map((c, index) => {
                                     return<HomeCategory 
@@ -29,6 +29,7 @@ class Home extends React.Component{
                                         name={products[c].name}
                                         description={products[c].description}
                                         key={index}
+                                        route={c}
                                     />
                                 }) 
                             }

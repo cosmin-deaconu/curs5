@@ -6,6 +6,7 @@ import Login from './pages/Login'
 import About from './pages/About'
 import Category from './pages/Category'
 import Page404 from './pages/Page404'
+import './utils/utility-classes.css';
 
 function App() {
   return (
