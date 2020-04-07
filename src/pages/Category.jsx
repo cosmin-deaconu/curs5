@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Layout from '../components/Layout';
 import products from '../utils/products.json'
+import CategoryList from '../components/CategoryList';
+import './Category.css';
 
 class Category extends Component {
     constructor(props) {
@@ -19,8 +21,16 @@ class Category extends Component {
     render() {
         return (
             <Layout>
-                <div className="container-fluid container-min-max-width">
+                <div className="category-page container-fluid container-min-max-width">
                     <h2>{ this.state.category.name }</h2>
+                    {
+                        this.state.category.items 
+                        ?
+                        <CategoryList items={this.state.category.items}/>
+                        :
+                        null
+                    }
+                    
                 </div>
             </Layout>
         );

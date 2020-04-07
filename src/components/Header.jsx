@@ -4,7 +4,9 @@ import logo from '../assets/images/logo.png';
 import './Header.css';
 import { ReactComponent as ShoppingCart } from '../assets/icons/shopping-cart.svg';
 
-function Header (){
+function Header (props){
+
+    const{ signOut, user } = props;
 
     return (
         <header className="border-bottom mb-3">
@@ -15,8 +17,18 @@ function Header (){
                 </Link>
 
                 <div>
-                <Link to="/login" className="ml-2">Login</Link>
-                    <ShoppingCart />
+                    {
+                        user 
+                        ?
+                        <div>
+                            <p>{user.displayName}</p>
+                            <button onClick={signOut}>Delogare</button>
+                        </div>
+                        :
+                        <Link to="/login" className="ml-2">Login</Link>
+                    }
+                    <ShoppingCart className="ml-2" />
+                
                 </div>
             </div>
         </header>
